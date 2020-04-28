@@ -141,17 +141,21 @@ public class UserController {
 	 */
 	//@Cacheable(value = "user" , key = "#token")
 	@GetMapping("/users/getUser/{token}")
-	public ResponseEntity<Response> getUser(@PathVariable String token)
+	public User getUser(@PathVariable String token)
 	{
 
 		User user = userService.getUser(token);
 
 
 		if(user!=null)
-
-		return ResponseEntity.status(HttpStatus.OK).body(new Response("User found" , user));
+			
+			return user;
 		
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("User Not found"));
+		return null;
+
+//		return ResponseEntity.status(HttpStatus.OK).body(new Response("User found" , user));
+//		
+//		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("User Not found"));
 	}
 
 	/**

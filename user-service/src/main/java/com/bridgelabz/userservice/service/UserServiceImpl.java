@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
 			user.setVerified(false);
 			userRepository.save(user);
 			//redisRepository.save(user);
-			emailModel.setMessage(EmailUtil.createLink("http://localhost:8081/api/user-service/users/verifyMail/", jwtUtil.generateToken(user.getId())));
+			emailModel.setMessage(EmailUtil.createLink("http://localhost:8081/fundoo/user-service/users/verifyMail/", jwtUtil.generateToken(user.getId())));
 			emailModel.setEmail(userDto.getEmail());
 			emailModel.setSubject("Click link to Verify ");
 			EmailUtil.sendAttachmentEmail(emailModel.getEmail(), emailModel.getSubject(), emailModel.getMessage());
@@ -176,7 +176,7 @@ public class UserServiceImpl implements UserService {
 		User user = userRepository.findByMail(emailId);
 		if(user!=null)
 		{
-			emailModel.setMessage("http://localhost:8081/user-service/updatePassword/"+jwtUtil.generateToken(user.getId()));
+			emailModel.setMessage("http://localhost:8081/fundoo/user-service/updatePassword/"+jwtUtil.generateToken(user.getId()));
 			emailModel.setEmail(emailId);
 			emailModel.setSubject("click link to get new password");
 			EmailUtil.sendAttachmentEmail(emailModel.getEmail(), emailModel.getSubject(), emailModel.getMessage());
