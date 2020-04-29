@@ -15,28 +15,10 @@ public interface NoteService {
 
 	boolean createNote(NoteDto noteDto, String token , long userId);
 
-//	NoteEntity deleteNote(long noteId, String token);
-//
-//	boolean deleteNotePermanently(long noteId, String token);
-//
-//	NoteEntity pinOrUnpinNote(long noteId, String token);
-//
-//	NoteEntity archieveNote(long noteId, String token);
-//
-//	boolean updateNote(long noteId, NoteUpdateDto noteUpdateDto, String token);
-//
+	boolean deleteNotePermanently(long noteId);
+	
+	boolean updateNote(long noteId, NoteUpdateDto noteUpdateDto);
+
 	List<NoteEntity> fetchAllNotes(long userId);
-//
-//	List<NoteEntity> fetchTrashedNote(String token);
-//
-//	List<NoteEntity> fetchArchievedNotes(String token);
-//
-//	List<NoteEntity> fetchPinnedNotes(String token);
-//
-//	NoteEntity getNote(long note_id);
-//
-//	boolean addNoteColor(long noteId, String color, String token);
-//
-//	List<NoteEntity> fetchByTitle(String title, String token);
 	
 }

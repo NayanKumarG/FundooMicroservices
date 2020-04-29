@@ -29,6 +29,7 @@ import com.bridgelabz.userservice.dto.UserDto;
 import com.bridgelabz.userservice.dto.UserLoginDto;
 import com.bridgelabz.userservice.entity.User;
 import com.bridgelabz.userservice.response.Response;
+import com.bridgelabz.userservice.response.UserResponse;
 import com.bridgelabz.userservice.service.UserService;
 import com.bridgelabz.userservice.utility.JwtUtil;
 
@@ -152,10 +153,10 @@ public class UserController {
 			return user;
 		
 		return null;
-
-//		return ResponseEntity.status(HttpStatus.OK).body(new Response("User found" , user));
+//
+//		return ResponseEntity.status(HttpStatus.OK).body(new UserResponse("User found" , user));
 //		
-//		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("User Not found"));
+//		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new UserResponse("User Not found" , user));
 	}
 
 	/**

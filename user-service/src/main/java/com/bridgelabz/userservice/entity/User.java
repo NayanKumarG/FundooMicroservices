@@ -65,9 +65,7 @@ public class User implements Serializable {
 	@Column(name = "is_verified")
 	private boolean isVerified;
 	
-//	@OneToMany(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "user_id")
-//	private List<NoteEntity> notes;
+
 	
 
 }
